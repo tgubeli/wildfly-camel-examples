@@ -43,5 +43,13 @@
             <from id="from2" uri="cxf:bean:cxfConsumer"/>
             <process id="processor" ref="greetingsProcessor"/>
         </route>
+
+        <route id="_route_proxy" streamCache="true">
+      <from id="_from1"
+        uri="cxf:http://localhost:8080/CodUniEjb/GeneraCodigoUniBeanService/GeneraCodigoUniBean?wsdlURL=http://backend.apps.na39.openshift.opentlc.com/CodUniEjb/GeneraCodigoUniBeanService/GeneraCodigoUniBean?wsdl&amp;serviceName={http://ejb.consultacoduni.pjud.com/}GeneraCodigoUniBeanService&amp;portName={http://ejb.consultacoduni.pjud.com/}GeneraCodigoUniBeanPort&amp;dataFormat=MESSAGE" />
+      <to id="_to1"
+        uri="cxf:http://backend.apps.na39.openshift.opentlc.com/CodUniEjb/GeneraCodigoUniBeanService/GeneraCodigoUniBean?dataFormat=MESSAGE" />
+    </route>
+
     </camelContext>
 </beans>
